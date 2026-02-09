@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
 import { Input } from '@/components/ui/input';
 import {
     Search,
@@ -216,6 +217,29 @@ export default function Home() {
                         <p className="text-gray-500 dark:text-gray-400">No calculators found for "{searchQuery}"</p>
                     </motion.div>
                 )}
+
+                {/* Internal Links for SEO */}
+                <div className="mt-12 pt-8 border-t border-gray-100 dark:border-gray-800 text-center space-y-2">
+                    <p className="text-gray-600 dark:text-gray-400">
+                        Try our{" "}
+                        <Link
+                            to="/Calculator"
+                            className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                        >
+                            SGPA to CGPA Calculator
+                        </Link>
+                    </p>
+
+                    <p className="text-gray-600 dark:text-gray-400">
+                        Convert easily using{" "}
+                        <Link
+                            to="/Conversions"
+                            className="text-blue-600 underline hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
+                        >
+                            CGPA to Percentage Converter
+                        </Link>
+                    </p>
+                </div>
             </div>
         </div>
     );
