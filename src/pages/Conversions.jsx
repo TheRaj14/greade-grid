@@ -85,7 +85,8 @@ export default function Conversions() {
         setToUnit(config.defaultTo);
         setInputValue('');
         setResult(null);
-    }, [type]);
+        document.title = `${config.title} – GradeGrid`;
+    }, [type, config.title]);
 
     useEffect(() => {
         if (inputValue && fromUnit && toUnit) {

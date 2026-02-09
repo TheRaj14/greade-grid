@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { createPageUrl } from '@/utils';
 import { motion } from 'framer-motion';
 import { Input } from '@/components/ui/input';
@@ -19,6 +19,10 @@ import CalculatorCard from '@/components/CalculatorCard';
 
 export default function Home() {
     const [searchQuery, setSearchQuery] = useState('');
+
+    useEffect(() => {
+        document.title = "GradeGrid – GPA, CGPA & Percentage Calculator";
+    }, []);
 
     const gpaTools = [
         {

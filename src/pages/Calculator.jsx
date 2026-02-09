@@ -51,7 +51,8 @@ export default function Calculator() {
         setResult(null);
         setSgpaValues(['']);
         setInputValue('');
-    }, [type]);
+        document.title = `${config.title} – GradeGrid`;
+    }, [type, config.title]);
 
     const addSemester = () => {
         setSgpaValues([...sgpaValues, '']);
